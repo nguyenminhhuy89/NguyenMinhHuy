@@ -65,10 +65,10 @@ describe Product do
     specify do
       expect(@products.count).to eq 9
       expect(@products.each_with_index { |product,index|
-        product.id.should eq @products[index].id
-        product.name.should eq @products[index].name
-        product.producttype.should eq @products[index].producttype
-        product.producttype.typetax.should eq @products[index].producttype.typetax
+        expect(product.id).to eq @products[index].id
+        expect(product.name).to eq @products[index].name
+        expect(product.producttype).to eq @products[index].producttype
+        expect(product.producttype.typetax).to eq @products[index].producttype.typetax
       })
     end
   end
