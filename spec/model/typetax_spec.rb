@@ -36,6 +36,7 @@ describe TypeTax do
         expect(typetax.name).to eq @typetax[index].name
         expect(typetax.tax).to eq @typetax[index].tax
       })
+      expect(File.exists?('./spec/db/input/TypeTax.yml')).to be true
     end
   end
 end
