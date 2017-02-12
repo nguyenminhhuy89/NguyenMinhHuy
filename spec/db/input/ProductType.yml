@@ -1,0 +1,43 @@
+---
+- !ruby/object:ProductType
+  id: 1
+  name: Book
+  typetax: !ruby/object:TypeTax
+    id: 1
+    name: Normal
+    tax: 10
+- !ruby/object:ProductType
+  id: 2
+  name: Food
+  typetax: !ruby/object:TypeTax
+    id: 2
+    name: Exempt
+    tax: 0
+- !ruby/object:ProductType
+  id: 3
+  name: Medical Prodcut
+  typetax: !ruby/object:TypeTax
+    id: 3
+    name: Exempt
+    tax: 0
+- !ruby/object:ProductType
+  id: 4
+  name: Normal Good
+  typetax: !ruby/object:TypeTax
+    id: 4
+    name: Normal
+    tax: 10
+- !ruby/object:ProductType
+  id: 5
+  name: Imported Good
+  typetax: !ruby/object:TypeTax
+    id: 5
+    name: NormalImportted
+    tax: 15
+- !ruby/object:ProductType
+  id: 6
+  name: Imported
+  typetax: !ruby/object:TypeTax
+    id: 6
+    name: Importted
+    tax: 5

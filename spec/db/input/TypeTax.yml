@@ -1,0 +1,17 @@
+---
+- !ruby/object:TypeTax
+  id: 1
+  name: Normal
+  tax: 10
+- !ruby/object:TypeTax
+  id: 2
+  name: NormalImportted
+  tax: 15
+- !ruby/object:TypeTax
+  id: 3
+  name: Exempt
+  tax: 0
+- !ruby/object:TypeTax
+  id: 4
+  name: Importted
+  tax: 5

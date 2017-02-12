@@ -1,0 +1,27 @@
+---
+- !ruby/object:Order
+  quantity: 1
+  product: !ruby/object:Product
+    id: 4
+    name: Imported Box of Chocolates
+    producttype: !ruby/object:ProductType
+      id: 4
+      name: Imported
+      typetax: !ruby/object:TypeTax
+        id: 4
+        name: Importted
+        tax: 5
+  price: 10.0
+- !ruby/object:Order
+  quantity: 1
+  product: !ruby/object:Product
+    id: 5
+    name: Imported Bottle of Perfume
+    producttype: !ruby/object:ProductType
+      id: 5
+      name: Imported Good
+      typetax: !ruby/object:TypeTax
+        id: 5
+        name: NormalImportted
+        tax: 15
+  price: 47.5
