@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe Order do
   describe '#new' do
     before :each do
