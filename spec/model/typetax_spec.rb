@@ -32,9 +32,9 @@ describe TypeTax do
       expect(@typetax.count).to eq 4
       expect(@typetax.each_with_index { |typetax,index|
         typetax.should be_an_instance_of TypeTax
-        typetax.id.should eq @typetax[index].id
-        typetax.name.should eq @typetax[index].name
-        typetax.tax.should eq @typetax[index].tax
+        expect(typetax.id).to eq @typetax[index].id
+        expect(typetax.name).to eq @typetax[index].name
+        expect(typetax.tax).to eq @typetax[index].tax
       })
     end
   end
