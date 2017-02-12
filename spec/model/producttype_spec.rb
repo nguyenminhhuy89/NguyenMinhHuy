@@ -35,9 +35,9 @@ describe ProductType do
       expect(@prodcuttypes.count).to eq 6
       expect(@prodcuttypes.each_with_index { |prodcuttype,index|
         prodcuttype.should be_an_instance_of ProductType
-        prodcuttype.id.should eq @prodcuttypes[index].id
-        prodcuttype.name.should eq @prodcuttypes[index].name
-        prodcuttype.typetax.should eq @prodcuttypes[index].typetax
+        expect(prodcuttype.id).to eq @prodcuttypes[index].id
+        expect(prodcuttype.name).to eq @prodcuttypes[index].name
+        expect(prodcuttype.typetax).to eq @prodcuttypes[index].typetax
       })
     end
   end
