@@ -1,9 +1,9 @@
 require 'ostruct'
 class Common
   attr_accessor :total, :sale_tax
-  def initialize pathProduct, pathOrder
-      @products = YAML::load(File.read(pathProduct))
-      @orders = YAML::load(File.read(pathOrder))
+  def initialize product, order
+      @products = product
+      @orders = order
       @bills = []
   end
 
