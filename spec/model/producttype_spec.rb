@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe ProductType do
 
   describe '#new' do

@@ -1,4 +1,5 @@
 require 'spec_helper'
+
 describe TypeTax do
   
   describe '#new' do
