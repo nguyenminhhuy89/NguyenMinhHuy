@@ -39,7 +39,6 @@ describe ProductType do
         expect(prodcuttype.name).to eq @prodcuttypes[index].name
         expect(prodcuttype.typetax).to eq @prodcuttypes[index].typetax
       })
-      expect(File.exists?('./spec/db/input/ProductType.yml')).to be true
     end
   end
 end
