@@ -35,9 +35,9 @@ describe Common do
 
     specify do
       @core.should be_an_instance_of Common
-      File.exist?(@orders[0]).should be true
-      File.exist?(@orders[1]).should be true
-      File.exist?(@orders[2]).should be true
+      expect(File.exist?(@orders[0])).to eq true
+      expect(File.exist?(@orders[1])).to eq true
+      expect(File.exist?(@orders[2])).to eq true
     end
   end
 end
