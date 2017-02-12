@@ -116,6 +116,9 @@ describe Order do
       expect(@orders[1].product).to eq @product7
       expect(@orders[2].product).to eq @product8
       expect(@orders[3].product).to eq @product9
+      expect(File.exists?('./spec/db/input/Order3.yml')).to be true
+      expect(File.exists?('./spec/db/input/Order2.yml')).to be true
+      expect(File.exists?('./spec/db/input/Order1.yml')).to be true
     end
   end
 end
