@@ -70,6 +70,7 @@ describe Product do
         expect(product.producttype).to eq @products[index].producttype
         expect(product.producttype.typetax).to eq @products[index].producttype.typetax
       })
+      expect(File.exists?('./spec/db/input/Product.yml')).to be true
     end
   end
 end

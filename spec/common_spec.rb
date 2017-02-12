@@ -131,6 +131,9 @@ describe Common do
 
     specify do
       @core.should be_an_instance_of Common
+      expect(File.exists?('./spec/db/output/Order1.csv')).to be true
+      expect(File.exists?('./spec/db/output/Order2.csv')).to be true
+      expect(File.exists?('./spec/db/output/Order3.csv')).to be true
     end
   end
 end
