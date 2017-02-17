@@ -1,2 +1,0 @@
-# NguyenMinhHuy
-My test ruby
