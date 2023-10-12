@@ -1,0 +1,36 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Post types</h1>
+
+<div id="post_types">
+  <% @post_types.each do |post_type| %>
+    <%= render post_type %>
+    <p>
+      <%= link_to "Show this post type", post_type %>
+    </p>
+  <% end %>
+</div>
+
+<div id="posts">
+  <table>
+    <thead>
+      <th>id</th>
+      <th>name</th>
+      <th>description</th>
+      <th>action</th>
+    </thead>
+    <tbody style="border: 1px solid black; color: black">
+      <% @post_types.each do |post_type| %>
+        <tr>
+          <td><%= post_type.id %></td>
+          <td><%= post_type.name %></td>
+          <td><%= post_type.description %></td>
+          <td><%= link_to "Show this post", post_type %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+<%= link_to "New post type", new_post_type_path %>

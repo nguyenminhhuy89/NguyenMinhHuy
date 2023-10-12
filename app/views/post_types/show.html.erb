@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @post_type %>
+
+<div>
+  <%= link_to "Edit this post type", edit_post_type_path(@post_type) %> |
+  <%= link_to "Back to post types", post_types_path %>
+
+  <%= button_to "Destroy this post type", @post_type, method: :delete %>
+</div>
