@@ -1,2 +1,2 @@
 # NguyenMinhHuy
-Exmaple
+Exmaple Project that apply something news
