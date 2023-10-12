@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -27,3 +28,7 @@ Things you may want to cover:
 # NguyenMinhHuy
 My test ruby
 >>>>>>> 0f18405 (Create README.md)
+=======
+# NguyenMinhHuy
+Exmaple
+>>>>>>> b3b1252 (Create README.md)
