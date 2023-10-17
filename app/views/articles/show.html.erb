@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<div>
+  <label>Title:</label>
+  <span><%= @article.title %></span>
+</div>
+
+<div>
+  <label>Body:</label>
+  <span><%= @article.body %></span>
+</div>
+
+<div>
+  <%= link_to "Edit this article", edit_article_path(@article) %>
+  <%= link_to "Back to article", articles_path %>
+  <%= button_to "Delete this article", @article, method: :delete %>
+</div>
