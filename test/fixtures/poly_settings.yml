@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyText
+  settingable: one
+  settingable_type: Settingable
+
+two:
+  content: MyText
+  settingable: two
+  settingable_type: Settingable

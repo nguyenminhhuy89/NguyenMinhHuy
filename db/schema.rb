@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_16_152925) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_21_152820) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,12 +28,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_16_152925) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "post", id: false, force: :cascade do |t|
-    t.string "title"
-    t.string "content"
-    t.bigint "post_type_id"
-    t.bigint "id", null: false
-    t.index ["post_type_id"], name: "fki_post_type"
+  create_table "poly_settings", force: :cascade do |t|
+    t.text "content"
+    t.string "settingable_type", null: false
+    t.bigint "settingable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["settingable_type", "settingable_id"], name: "index_poly_settings_on_settingable"
   end
 
   create_table "post_types", force: :cascade do |t|
@@ -47,9 +48,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_16_152925) do
     t.string "title"
     t.text "content"
     t.text "description"
-    t.integer "type"
+    t.integer "post_type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["title"], name: "index_posts_on_title", unique: true
   end
 
 end

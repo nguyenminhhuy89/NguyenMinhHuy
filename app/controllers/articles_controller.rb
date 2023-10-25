@@ -18,9 +18,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article.update(article_param)
     respond_to do |format|
-      if @article.save
+      if @article.update(article_param)
         format.html { redirect_to article_path(@article), notice: "Edit successfully" }
         format.json { render :show, status: :updated, location: @article }
       else

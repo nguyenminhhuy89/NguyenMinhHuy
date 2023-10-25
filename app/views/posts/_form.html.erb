@@ -1,37 +1,36 @@
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-      <ul>
+<% if post.errors.any? %>
+<div style="color: red">
+    <h2>
+        <%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <ul>
         <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <li>
+            <%= error.full_message %>
+        </li>
         <% end %>
-      </ul>
-    </div>
+    </ul>
+</div>
+<% end %>
+  <%= simple_form_for post do |f| %>
+  <div>
+      <label>Title</label>
+      <%= f.text_field :title %>
+  </div>
+  <div>
+      <label>Content</label>
+      <%= f.text_area :content %>
+  </div>
+  <div>
+      <label>Description</label>
+      <%= f.text_area :description %>
+  </div>
+  <div>
+      <label>Post Type</label>
+      <%= f.input :post_type_id, as: :select, collection: PostType.all, label: false %>
+  </div>
+  <div>
+      <%= f.button :submit %>
+  </div>
   <% end %>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div>
-    <%= form.label :type, style: "display: block" %>
-    <%= form.number_field :type %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
 <% end %>

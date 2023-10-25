@@ -20,8 +20,9 @@
     <%= form.text_area :body %>
   </div>
   <div>
-    <%= form.fields_for :comments do |ff| %>
+    <%= form.fields_for :comments, include_id: false do |ff| %>
       <%= ff.text_field(:content) %>
+      <%= ff.hidden_field(:id) %>
       <%= ff.hidden_field(:article_id, value: article.id) %>
     <% end %>
   </div>
