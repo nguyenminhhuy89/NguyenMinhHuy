@@ -1,0 +1,10 @@
+<ul class=”pagination”>
+  <li class=”disabled”>
+    <%= will_paginate(@articles,:previous_label => "&laquo;",
+      :next_label => "&raquo;",
+      :class=>"small-font",
+      :outer_window => 1,
+      :inner_window => 0)
+    %>
+  </li>
+</ul>

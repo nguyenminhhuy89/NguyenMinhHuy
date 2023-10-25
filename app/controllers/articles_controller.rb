@@ -1,8 +1,9 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!
   before_action :load_article, only: %i[show edit destroy delete update]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.paginate(:page => params[:page], :per_page => 7)
   end
 
   def show
@@ -62,7 +63,7 @@ class ArticlesController < ApplicationController
 
   def search
     return unless params[:search]
-    @articles = Article.search(params)
+    @articles = Article.search(params).paginate(:page => params[:page], :per_page => 10)
     respond_to do |format|
       format.html { render :index }
     end

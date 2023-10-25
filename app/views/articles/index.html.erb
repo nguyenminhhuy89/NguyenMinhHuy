@@ -1,6 +1,6 @@
 <h1>Articles</h1>
-
-<div id="articles">
+<div class="digg_pagination"><%= will_paginate %></div>
+<div id="articles" style="margin-top: 17px">
   <table class="table table-striped table-bordered table-hover">
     <thead class="thead-dark">
       <th scope="col">id</th>
@@ -26,4 +26,5 @@
     </tbody>
   </table>
 </div>
+<div class="digg_pagination"><%= will_paginate %></div>
 <%= link_to("New", { controller: :articles, action: :new })%>
