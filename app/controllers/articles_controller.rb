@@ -60,6 +60,14 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def search
+    return unless params[:search]
+    @articles = Article.search(params)
+    respond_to do |format|
+      format.html { render :index }
+    end
+  end
+
   private
 
   def load_article

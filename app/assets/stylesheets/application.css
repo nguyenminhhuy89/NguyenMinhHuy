@@ -17,3 +17,6 @@
 table, th, td {
   border: 1px solid green;
 }
+.btn {
+  margin-left: 10px;
+}
