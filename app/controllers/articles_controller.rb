@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
-  before_action :load_article, only: %i[show edit destroy delete update]
+  load_and_authorize_resource
 
   def index
     @articles = Article.all.paginate(:page => params[:page], :per_page => 7)

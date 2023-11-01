@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  SUPER_ADMIN_EMAIL = "nguyenminhhuy89@gmail.com"
-  ADMIN_EMAIL = "admin89@gmail.com"  
+  SUPER_ADMIN_EMAIL = "abc@gmail.com"
+  ADMIN_EMAIL = "xyz@gmail.com"  
 
   def admin?
     self.email == ADMIN_EMAIL

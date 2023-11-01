@@ -4,9 +4,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :all, Article, public: true
-    can :all, Post, public: true
-    can :all, PostType, public: true
+    can :manage, :all
+    cannot :destroy, Article if user&.admin?
+    cannot :manage, PostType if user&.admin?
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?

@@ -18,7 +18,7 @@
           <td><%=h post.title %></td>
           <td><%=h post.content %></td>
           <td><%=h post.post_type&.name %></td>
-          <td><%= link_to "Show", post %> | <%= link_to "Edit", edit_post_path(post) %></td>
+          <td><% if can? :read, post %><%= link_to "Show", post %><% end %> | <%= link_to "Edit", edit_post_path(post) %></td>
         </tr>
       <% end %>
     </tbody>

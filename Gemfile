@@ -47,6 +47,10 @@ gem 'simple_form'
 gem 'will_paginate'
 gem 'cancancan'
 gem 'devise'
+gem 'bootstrap'
+gem "font-awesome-sass", "~> 6.4.2"
+gem "importmap-rails"
+gem 'webpacker'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
