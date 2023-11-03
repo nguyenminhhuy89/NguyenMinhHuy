@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @articles = Article.all.paginate(:page => params[:page], :per_page => 7)
+    @articles = Article.all_records.paginate(:page => params[:page], :per_page => 7)
   end
 
   def show
@@ -12,6 +12,8 @@ class ArticlesController < ApplicationController
     @article.comments.build
   end
 
+  # Creates a new instance of the Article class and assigns it to the @article instance variable.
+  # Builds a new comment associated with the @article instance variable.
   def new
     @article = Article.new
     @article.comments.build
@@ -33,7 +35,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_param)
     respond_to do |format|
       if @article.save
-        format.html { redirect_to article_url(@article), notice: "Saved successfully" }
+      format.html { redirect_to article_url(@article), notice: "Saved successfully" }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -75,6 +77,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_param
-    params.require(:article).permit(Article.column_names, comments_attributes: [:content, :article_id])
+    params.require(:article).permit(Article.column_names, comments_attributes: [:id, :content, :article_id])
   end
 end

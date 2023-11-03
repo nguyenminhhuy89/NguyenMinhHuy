@@ -1,4 +1,4 @@
-<%= form_with(model: article) do |form| %>
+<%= simple_form_for(@article) do |form| %>
   <% if article.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
@@ -20,10 +20,8 @@
     <%= form.text_area :body %>
   </div>
   <div>
-    <%= form.fields_for :comments, include_id: false do |ff| %>
+    <%= form.fields_for :comments do |ff| %>
       <%= ff.text_field(:content) %>
-      <%= ff.hidden_field(:id) %>
-      <%= ff.hidden_field(:article_id, value: article.id) %>
     <% end %>
   </div>
 

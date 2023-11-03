@@ -5,6 +5,7 @@ class Ability
 
   def initialize(user)
     can :manage, :all
+    can :create, Comment
     cannot :destroy, Article if user&.admin?
     cannot :manage, PostType if user&.admin?
     # Define abilities for the user here. For example:

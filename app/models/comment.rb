@@ -1,3 +1,4 @@
 class Comment < ApplicationRecord
-  belongs_to :article
+  validates :content, presence: true
+  belongs_to :article, inverse_of: :comments
 end
