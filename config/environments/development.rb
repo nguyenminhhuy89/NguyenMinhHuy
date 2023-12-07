@@ -15,6 +15,7 @@ Rails.application.configure do
   config.consider_all_requests_local = true
   config.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+  config.action_controller.allow_forgery_protection = false
   # Enable server timing
   config.server_timing = true
 

@@ -4,6 +4,10 @@ class Post < ApplicationRecord
 
   after_save :create_setting
 
+  delegate :name, to: :post_type,
+    allow_nil: true, prefix: true,
+    default: "NguyenMinh"
+
   private
 
   def create_setting

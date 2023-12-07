@@ -1,12 +1,22 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, path: 'auth', path_names: {
+    sign_in: 'login',
+    sign_out: 'logout'
+  }
+  post 'auth/login', to: 'sessions#login'
   mount Sidekiq::Web => "/sidekiq"
   resources :comments
   resources :post_types
   resources :posts
   resources :articles
+
+  namespace :api do
+    namespace :v1 do 
+      resources :articles
+    end
+  end
 
   get 'search', to: 'articles#search'
 
