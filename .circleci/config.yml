@@ -8,8 +8,8 @@ jobs:
     docker:
       - image: cimg/ruby:2.7.8
         environment:
-          PGHOST: localhost
-          PGUSER: myapp
+          PGHOST: 127.0.0.1
+          PGUSER: postgres
           RAILS_ENV: test
       - image: postgres
         environment:
@@ -20,7 +20,11 @@ jobs:
 
     steps:
       - checkout
-      - ruby/install-deps      
+      - ruby/install-deps
+      - run:
+        command: apt-get update -qq && \
+        apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips nodejs && \
+        rm -rf /var/lib/apt/lists /var/cache/apt/archives
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
