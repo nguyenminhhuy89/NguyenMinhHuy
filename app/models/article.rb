@@ -7,7 +7,7 @@ class Article < ApplicationRecord
 
   after_commit :update_title
   after_save :create_setting
-
+            
   scope :all_records, -> { order(title: :asc) }
 
   def self.search(params)
