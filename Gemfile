@@ -9,7 +9,6 @@ gem "rails", "~> 7.1.0"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
 gem "pg"
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -48,7 +47,6 @@ gem 'will_paginate'
 gem 'cancancan'
 gem 'devise'
 gem 'bootstrap'
-gem "font-awesome-sass", "~> 6.4.2"
 gem 'webpacker'
 
 # path 'local_gems' do
