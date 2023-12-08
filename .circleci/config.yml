@@ -11,7 +11,7 @@ jobs:
           PGHOST: localhost
           PGUSER: myapp
           RAILS_ENV: test
-      - image: cimg/postgres:16
+      - image: postgres
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: blgdb
