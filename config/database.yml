@@ -21,8 +21,8 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: blgdb
+  database: blgdb_test
 
 production:
   <<: *default
-  database: blgdb
+  database: blgdb_production
