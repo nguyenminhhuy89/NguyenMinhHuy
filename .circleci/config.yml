@@ -23,9 +23,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: Bundle install
-          command: |
-          sudo apt-get update -qq && \
-          sudo apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips nodejs
+          command: sudo apt-get update -qq && sudo apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips nodejs
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load RAILS_ENV=test
