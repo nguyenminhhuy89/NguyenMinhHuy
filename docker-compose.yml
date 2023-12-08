@@ -52,5 +52,5 @@ services:
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
       PGSQL_SOCKET_DIR: /var/run/postgresql/.s.PGSQL.5432
-      DB_USERNAME: nguyenminhhuy89
-      DB_PASSWORD: 'Hanhnguyen123'
+    ports:
+      - "65432:5432"

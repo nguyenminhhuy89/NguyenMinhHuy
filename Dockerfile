@@ -61,10 +61,23 @@
 # EXPOSE 3000
 # CMD ["./bin/rails", "server"]
 FROM ruby:2.7.8
-RUN apt-get update && apt-get install -y nodejs 
+
 RUN mkdir /app
+# # Rails app lives here
 WORKDIR /app
+
+# # Install packages needed for deployment
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips nodejs && \
+    rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# # Install application gems
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
-RUN bundle install
 COPY . /app
+RUN bundle install && \
+    rm -rf ~/.bundle/ "${BUNDLE_PATH}"/ruby/*/cache "${BUNDLE_PATH}"/ruby/*/bundler/gems/*/.git
+
+# # Start the server by default, this can be overwritten at runtime
+EXPOSE 3000
+CMD ["./bin/rails", "server"]

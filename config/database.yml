@@ -9,6 +9,7 @@ default: &default
   host: db
   port: 5432
   database: blgdb
+  username: postgres
   pool: 5
 
 development:
