@@ -1,0 +1,34 @@
+version: 2.1
+
+orbs:
+  ruby: circleci/ruby@1.1
+
+jobs:
+  build:  
+    docker:
+      - image: cimg/ruby:2.7.8
+        environment:
+          PGHOST: localhost
+          PGUSER: myapp
+          RAILS_ENV: test
+      - image: cimg/postgres:14.1
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: blgdb
+
+    working_directory: ~/app
+
+    steps:
+      - checkout
+      - ruby/install-deps      
+      - run:
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
+          environment:
+            RAILS_ENV: test
+      - ruby/rspec-test
+
+workflows:
+  test:
+    jobs:
+      - build
