@@ -49,7 +49,6 @@ gem 'cancancan'
 gem 'devise'
 gem 'bootstrap'
 gem "font-awesome-sass", "~> 6.4.2"
-gem "importmap-rails"
 gem 'webpacker'
 
 # path 'local_gems' do
