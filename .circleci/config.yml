@@ -15,7 +15,7 @@ jobs:
         environment:
           POSTGRES_USER: postgres
           POSTGRES_DB: blgdb
-
+    resource_class: large
     working_directory: ~/app
 
     steps:
@@ -25,10 +25,10 @@ jobs:
           name: Bundle install
           command: |
           sudo apt-get update -qq && \
-          apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips nodejs
+          sudo apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips nodejs
       - run:
           name: Database setup
-          command: bundle exec rails db:schema:load --trace
+          command: bundle exec rails db:schema:load RAILS_ENV=test
           environment:
             RAILS_ENV: test
       - run:
