@@ -19,11 +19,6 @@
     <%= form.label :body, style: "display: block" %>
     <%= form.text_area :body %>
   </div>
-  <div>
-    <%= form.fields_for :comments do |ff| %>
-      <%= ff.text_field(:content) %>
-    <% end %>
-  </div>
 
   <div>
     <%= form.submit %>

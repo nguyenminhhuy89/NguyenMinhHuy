@@ -15,7 +15,7 @@ jobs:
         environment:
           POSTGRES_USER: postgres
           POSTGRES_HOST_AUTH_METHOD: trust
-          POSTGRES_DB: blgdb
+          POSTGRES_DB: blog
     resource_class: large
     working_directory: ~/app
 

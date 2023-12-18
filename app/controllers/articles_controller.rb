@@ -9,14 +9,12 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article.comments.build
   end
 
   # Creates a new instance of the Article class and assigns it to the @article instance variable.
   # Builds a new comment associated with the @article instance variable.
   def new
     @article = Article.new
-    @article.comments.build
   end
 
   def update
@@ -77,6 +75,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_param
-    params.require(:article).permit(Article.column_names, comments_attributes: [:id, :content, :article_id])
+    params.require(:article).permit(Article.column_names)
   end
 end

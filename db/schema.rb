@@ -21,13 +21,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_25_125725) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
-    t.string "content"
-    t.integer "article_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "poly_settings", force: :cascade do |t|
     t.text "content"
     t.string "settingable_type", null: false

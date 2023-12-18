@@ -1,9 +1,6 @@
 class Article < ApplicationRecord
-  has_many :comments, inverse_of: :article
   has_many :poly_settings, as: :settingable
   validates :title, presence: true, length: { maximum: 7 }
-
-  accepts_nested_attributes_for :comments, allow_destroy: true, reject_if: :all_blank
 
   after_commit :update_title
   after_save :create_setting
