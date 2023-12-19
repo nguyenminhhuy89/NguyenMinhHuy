@@ -1,4 +1,4 @@
-class Users::SessionsController < Devise::SessionsController
+class SessionsController < Devise::SessionsController
   protect_from_forgery with: :null_session
   def login
     user = User.find_by(email: params[:email])
