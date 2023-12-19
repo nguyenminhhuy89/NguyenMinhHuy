@@ -1,7 +1,5 @@
 require 'rails_helper'
 
 describe Article do
-  describe 'test' do
-    it { expect(1).to eq(1) }
-  end
+  pending("test later")
 end
