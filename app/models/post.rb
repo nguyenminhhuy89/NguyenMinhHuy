@@ -1,3 +1,5 @@
+require 'observer'
+
 class Post < ApplicationRecord
   belongs_to :post_type
   has_many :poly_settings, as: :settingable

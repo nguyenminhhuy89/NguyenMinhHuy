@@ -5,8 +5,14 @@ ruby "2.7.8"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.0"
 
+gem 'slack-notifier'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
+
+gem 'rails-observers'
+
+gem 'selenium-devtools', '~> 0.119'
 
 # Use sqlite3 as the database for Active Record
 gem "pg"
@@ -77,6 +83,4 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
 end

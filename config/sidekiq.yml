@@ -1,0 +1,9 @@
+:verbose:      false
+:pidfile:      "tmp/pids/server.pid"
+:concurrency:  5
+:timeout: 120
+:queues:
+  - [default, 2]
+  - [mailer, 2]
+  - [mailers, 2]
+  - [searchkick, 2]
