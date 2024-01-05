@@ -4,7 +4,7 @@ require 'spec_helper'
 RSpec.describe 'Using Selenium' do
   it 'uses eight components' do
 
-    driver = Selenium::WebDriver.for  :chrome
+    driver = Selenium::WebDriver.for  :firefox
     driver.manage.timeouts.implicit_wait = 500
     driver.get('https://www.selenium.dev/selenium/web/web-form.html')
 
