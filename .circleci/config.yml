@@ -27,7 +27,7 @@ jobs:
           command: sudo apt-get update -qq && sudo apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips42 nodejs gconf-service libasound2 libgconf-2-4 libgcrypt20 fonts-liberation libatk-bridge2.0-0 libatspi2.0-0 libgbm1 libgtk-3-0 libu2f-udev xdg-utils
       - run:
           name: install chrome-webdriver
-          command: sudo apt update && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && chmod +x chromedriver && cp chromedriver /usr/local/bin && sudo dpkg -i google-chrome*.deb && rm google-chrome*.deb
+          command: sudo apt update && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && chmod +x chromedriver && cp chromedriver /usr/local/bin && apt install -y ./google-chrome-stable_current_amd64.deb && rm ./google-chrome-stable_current_amd64.deb
       - run:
           name: Database setup
           command: bundle exec rails db:create db:migrate RAILS_ENV=test
