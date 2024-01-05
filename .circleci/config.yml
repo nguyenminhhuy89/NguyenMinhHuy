@@ -24,7 +24,7 @@ jobs:
       - ruby/install-deps
       - run:
           name: install apt
-          command: sudo apt-get update -qq && sudo apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips nodejs gconf-service libasound2 libgconf-2-4 libgcrypt11 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk2.0-0 libnspr4 libnss3 libstdc++6 libx11-6
+          command: sudo apt-get update -qq && sudo apt-get install --no-install-recommends -y curl postgresql postgresql-contrib libvips42 nodejs gconf-service libasound2 libgconf-2-4 libgcrypt20 libgdk-pixbuf2.0-0 libglib2.0-0 libgtk2.0-0 libnspr4 libnss3 libstdc++6 libx11-6
       - run:
           name: install chrome-webdriver
           command: sudo apt update && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && sudo dpkg -i google-chrome*.deb && rm google-chrome*.deb && wget -N https://chromedriver.storage.googleapis.com/92.0.4515.107/chromedriver_linux64.zip && unzip chromedriver_linux64.zip && chmod +x chromedriver && cp chromedriver /usr/local/bin && rm chromedriver_linux64.zip && rm chromedriver
