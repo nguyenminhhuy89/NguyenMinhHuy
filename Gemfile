@@ -12,8 +12,6 @@ gem "sprockets-rails"
 
 gem 'rails-observers'
 
-gem 'selenium-devtools'
-
 # Use sqlite3 as the database for Active Record
 gem "pg"
 
