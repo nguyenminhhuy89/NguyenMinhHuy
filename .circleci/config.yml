@@ -14,7 +14,7 @@ jobs:
           BROWSERSTACK_USERNAME: "neonguyen_ZFe6Rb"
           BROWSERSTACK_ACCESS_KEY: "jNPzVHmLttrJY7mP6P8d"
           BROWSERSTACK_LOCAL: false
-          BROWSERSTACK_LOCAL_IDENTIFIER: "neonguyen
+          BROWSERSTACK_LOCAL_IDENTIFIER: "neonguyen"
       - image: postgres
         environment:
           POSTGRES_USER: postgres
