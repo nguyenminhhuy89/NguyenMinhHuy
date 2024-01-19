@@ -11,7 +11,7 @@ RSpec.describe 'Using Selenium for testing Relative selectors' do
     driver = Selenium::WebDriver.for(:remote,
       :url => "https://#{USER_NAME}:#{ACCESS_KEY}@hub.browserstack.com/wd/hub",
       :capabilities => options)
-  begin
+    begin
     # opening the bstackdemo.com website
     driver.navigate.to "https://bstackdemo.com"
     wait = Selenium::WebDriver::Wait.new(:timeout => 10) # seconds
@@ -39,10 +39,11 @@ RSpec.describe 'Using Selenium for testing Relative selectors' do
         driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Failed to add product to the cart"}}')
     end
   # marking test as 'failed' if test script is unable to open the bstackdemo.com website
-  rescue
-    driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Some elements failed to load"}}')
-  end
-    driver.quit
+    rescue
+      driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Some elements failed to load"}}')
+    end
+      driver.quit
+    end
   end
 
   BUILD_NAME = "browserstack-build-1"
