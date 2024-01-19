@@ -1,10 +1,8 @@
 require 'selenium-webdriver'
-require 'spec_helper'
 USER_NAME = ENV['BROWSERSTACK_USERNAME'] || "neonguyen_ZFe6Rb"
 ACCESS_KEY = ENV['BROWSERSTACK_ACCESS_KEY'] || "jNPzVHmLttrJY7mP6P8d"
-
-RSpec.describe 'Using Selenium for testing Relative selectors' do
-  def run_session(bstack_options)
+class Parallel
+  def self.run_session(bstack_options)
     options = Selenium::WebDriver::Options.send "chrome"
     options.browser_name = bstack_options["browserName"].downcase
     options.add_option('bstack:options', bstack_options)

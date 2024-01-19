@@ -40,6 +40,9 @@ jobs:
       - run:
           name: Run rspec
           command: bundle exec rspec
+      - run:
+          name: Run parallel
+          command: ruby spec/parallel.rb
 
 workflows:
   test:
