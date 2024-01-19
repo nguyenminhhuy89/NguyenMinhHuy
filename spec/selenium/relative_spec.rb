@@ -4,12 +4,13 @@ USER_NAME = ENV['BROWSERSTACK_USERNAME'] || "neonguyen_ZFe6Rb"
 ACCESS_KEY = ENV['BROWSERSTACK_ACCESS_KEY'] || "jNPzVHmLttrJY7mP6P8d"
 
 RSpec.describe 'Using Selenium for testing Relative selectors' do
-  options = Selenium::WebDriver::Options.send "chrome"
-  options.browser_name = bstack_options["browserName"].downcase
-  options.add_option('bstack:options', bstack_options)
-  driver = Selenium::WebDriver.for(:remote,
-    :url => "https://#{USER_NAME}:#{ACCESS_KEY}@hub.browserstack.com/wd/hub",
-    :capabilities => options)
+  def run_session(bstack_options)
+    options = Selenium::WebDriver::Options.send "chrome"
+    options.browser_name = bstack_options["browserName"].downcase
+    options.add_option('bstack:options', bstack_options)
+    driver = Selenium::WebDriver.for(:remote,
+      :url => "https://#{USER_NAME}:#{ACCESS_KEY}@hub.browserstack.com/wd/hub",
+      :capabilities => options)
   begin
     # opening the bstackdemo.com website
     driver.navigate.to "https://bstackdemo.com"
@@ -39,10 +40,11 @@ RSpec.describe 'Using Selenium for testing Relative selectors' do
     end
   # marking test as 'failed' if test script is unable to open the bstackdemo.com website
   rescue
-      driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Some elements failed to load"}}')
+    driver.execute_script('browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed", "reason": "Some elements failed to load"}}')
   end
-  driver.quit
+    driver.quit
   end
+
   BUILD_NAME = "browserstack-build-1"
   caps = [{
   "os" => "Windows",
