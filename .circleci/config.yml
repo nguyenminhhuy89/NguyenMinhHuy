@@ -37,9 +37,9 @@ jobs:
           command: bundle exec rails db:create db:migrate RAILS_ENV=test
           environment:
             RAILS_ENV: test
-      # - run:
-      #     name: Run rspec
-      #     command: bundle exec rspec
+      - run:
+          name: Run rspec
+          command: bundle exec rspec
       # - run:
       #     name: Run parallel
       #     command: ruby spec/parallel.rb
