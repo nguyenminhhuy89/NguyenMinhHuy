@@ -2,8 +2,16 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@1.1
+  aws-ecs: circleci/aws-ecs@4.0.0
 
 jobs:
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - aws-ecs/deploy_ecs_scheduled_task:
+          rule_name: deployment
   build:  
     docker:
       - image: cimg/ruby:2.7.8
@@ -48,3 +56,4 @@ workflows:
   test:
     jobs:
       - build
+      - example-job
