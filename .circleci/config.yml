@@ -12,10 +12,10 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: postgres
           RAILS_ENV: test
-          BROWSERSTACK_USERNAME: "neonguyen_ZFe6Rb"
-          BROWSERSTACK_ACCESS_KEY: "jNPzVHmLttrJY7mP6P8d"
-          BROWSERSTACK_LOCAL: false
-          BROWSERSTACK_LOCAL_IDENTIFIER: "neonguyen"
+          # BROWSERSTACK_USERNAME: "neonguyen_ZFe6Rb"
+          # BROWSERSTACK_ACCESS_KEY: "jNPzVHmLttrJY7mP6P8d"
+          # BROWSERSTACK_LOCAL: false
+          # BROWSERSTACK_LOCAL_IDENTIFIER: "neonguyen"
       - image: postgres
         environment:
           POSTGRES_USER: postgres
@@ -44,13 +44,13 @@ jobs:
       # - run:
       #     name: Run parallel
       #     command: ruby spec/parallel.rb
-  deployment-job:
-    docker:
-      # replace with your preferred image
-      - image: cimg/base:stable
-    steps:
-      - aws-ecs/deploy_ecs_scheduled_task:
-          rule_name: deployment
+  # deployment-job:
+  #   docker:
+  #     # replace with your preferred image
+  #     - image: cimg/base:stable
+  #   steps:
+  #     - aws-ecs/deploy_ecs_scheduled_task:
+  #         rule_name: deployment
 workflows:
   test:
     jobs:
