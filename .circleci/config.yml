@@ -47,7 +47,7 @@ jobs:
           # Starts web server for E2E tests - replace with your own server invocation
           # https://docs.cypress.io/guides/continuous-integration/introduction#Boot-your-server
           command: 'npm start && npx cypress run --record --parallel'
-      # - run:
+      # - run:  
       #     name: Run rspec
       #     command: bundle exec rspec
       # - run:
@@ -64,4 +64,4 @@ workflows:
   test:
     jobs:
       - build
-      # - deployment-job
+      # - deployment-job 
