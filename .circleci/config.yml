@@ -2,6 +2,7 @@ version: 2.1
 
 orbs:
   ruby: circleci/ruby@1.1
+  aws-ecs: circleci/aws-ecs@4.0.0
 
 jobs:
   build:  
@@ -43,8 +44,15 @@ jobs:
       # - run:
       #     name: Run parallel
       #     command: ruby spec/parallel.rb
-
+  deployment-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
+    steps:
+      - aws-ecs/deploy_ecs_scheduled_task:
+          rule_name: deployment
 workflows:
   test:
     jobs:
       - build
+      - deployment-job
