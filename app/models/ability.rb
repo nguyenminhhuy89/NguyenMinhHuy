@@ -7,6 +7,7 @@ class Ability
     can :manage, :all
     cannot :destroy, Article if user&.admin?
     cannot :manage, PostType if user&.admin?
+    
     # Define abilities for the user here. For example:
     #
     #   return unless user.present?
