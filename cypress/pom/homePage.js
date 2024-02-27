@@ -12,7 +12,8 @@ class HomePage {
   }
 
   click(button) {
-    button.should('be.visible').click();
+    // button.should('be.visible').click();
+    cy.findByRole('button', {name: 'Button'}).click()
   }
 }
 

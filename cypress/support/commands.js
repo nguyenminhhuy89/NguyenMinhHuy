@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import '@testing-library/cypress/add-commands'
+
+Cypress.Commands.add('compareImages', (before, after) => { 
+  return cy.task('diffImage', {
+    beforeImage: before,
+    afterImage: after,
+    threshold: 0.00 // Threshold for difference
+  });
+})
