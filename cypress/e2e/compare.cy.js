@@ -18,3 +18,9 @@ describe('template spec', () => {
     // });
   })
 })
+
+describe.only('template spec v2', () => {
+  it('passes', () => {
+    cy.request('https://example.cypress.io');
+  })
+})
